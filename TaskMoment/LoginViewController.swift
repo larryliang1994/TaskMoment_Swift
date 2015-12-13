@@ -20,6 +20,7 @@ class LoginViewController: UIViewController, RequestDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         Config.Random = String(arc4random_uniform(100000))
         
         loginButton.backgroundColor = UIColor.redColor()
