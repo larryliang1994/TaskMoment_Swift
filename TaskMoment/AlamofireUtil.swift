@@ -45,21 +45,38 @@ class AlamofireUtil: PrDelegate {
         
         Alamofire.request(.POST, Constants.serverUrl + "/act/ajax.php?a=" + soapUrl!,
             parameters: parameters)
-            .responseJSON { response in
-                print("Response JSON: \(response.result.value)")
+            .responseString{ response in
                 
-                let result = String(response.result.value)
+                let result = response.result.value
+
+                let json = JSON(self.convertStringToDictionary(result!)!)
+                
                 if response.result.isSuccess {
-                    let status = Int(JSON(result)["status"].int64Value)
-                    
-                    self.requestDelegate?.onResponse(status, response: String(response.result.value))
+                    let status = json["status"].intValue
+                    if status == Constants.Success {
+                        self.requestDelegate?.onResponse(status, info: String(json["info"]))
+                    } else {
+                        self.requestDelegate?.onResponse(Constants.Failed, info: String(json["info"]))
+                    }
                 } else {
-                    self.requestDelegate?.onResponse(Constants.Failed, response: String(response.result.value))
+                    self.requestDelegate?.onResponse(Constants.Failed, info: String(json["info"]))
                 }
         }
+    }
+    
+    func convertStringToDictionary(text: String) -> [String:AnyObject]? {
+        if let data = text.dataUsingEncoding(NSUTF8StringEncoding) {
+            do {
+                let json = try NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers) as? [String:AnyObject]
+                return json
+            } catch {
+                print("Something went wrong")
+            }
+        }
+        return nil
     }
 }
 
 protocol RequestDelegate {
-    func onResponse(resultCode:Int, response: String)
+    func onResponse(resultCode: Int, info: String)
 }

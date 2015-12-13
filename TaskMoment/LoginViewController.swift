@@ -20,7 +20,6 @@ class LoginViewController: UIViewController, RequestDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         Config.Random = String(arc4random_uniform(100000))
         
         loginButton.backgroundColor = UIColor.redColor()
@@ -60,21 +59,14 @@ class LoginViewController: UIViewController, RequestDelegate {
         }
     }
     
-    func onResponse(resultCode: Int, response: String) {
-        if isGetVerifyCode {
-            isGetVerifyCode = false
-        } else if isLogin {
-            let alertController = UIAlertController(title: "Default Style", message: "A standard alert.", preferredStyle: .Alert)
-            let cancelAction = UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel, handler: nil)
-            let okAction = UIAlertAction(title: "好的", style: UIAlertActionStyle.Default, handler: nil)
-            alertController.addAction(cancelAction)
-            alertController.addAction(okAction)
-            
-            self.presentViewController(alertController, animated: true, completion: nil)
-
-            
-            isLogin = false
-        }
+    func onResponse(resultCode: Int, info: String) {
+        let alertController = UIAlertController(title: "提示", message: info, preferredStyle: .Alert)
+        let cancelAction = UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel, handler: nil)
+        let okAction = UIAlertAction(title: "好的", style: UIAlertActionStyle.Default, handler: nil)
+        alertController.addAction(cancelAction)
+        alertController.addAction(okAction)
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
     }
 }
 
