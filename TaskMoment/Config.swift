@@ -8,4 +8,5 @@
 
 class Config {
     static var Random: String?
+    static var Cookie: String?
 }

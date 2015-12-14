@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4987BC101C1DAAE80065B67A /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4987BC0F1C1DAAE80065B67A /* Company.swift */; };
+		4987BC141C1DB4400065B67A /* CompanyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4987BC131C1DB4400065B67A /* CompanyTableViewController.swift */; };
 		49A195C31C1C7A20003B8DBD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A195C21C1C7A20003B8DBD /* AppDelegate.swift */; };
 		49A195CA1C1C7A20003B8DBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49A195C91C1C7A20003B8DBD /* Assets.xcassets */; };
 		49A195D81C1C7A20003B8DBD /* TaskMomentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A195D71C1C7A20003B8DBD /* TaskMomentTests.swift */; };
@@ -25,6 +27,11 @@
 		49A196521C1C7B71003B8DBD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49A196511C1C7B71003B8DBD /* LaunchScreen.storyboard */; };
 		49A196551C1C7BC7003B8DBD /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A196541C1C7BC7003B8DBD /* Config.swift */; };
 		49A196571C1C7BCB003B8DBD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A196561C1C7BCB003B8DBD /* Constants.swift */; };
+		49D60BF61C1EB5E6001C3912 /* UtilBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D60BF51C1EB5E6001C3912 /* UtilBox.swift */; };
+		49D60BF91C1EBA2A001C3912 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D60BF81C1EBA2A001C3912 /* LoginModel.swift */; };
+		49D60BFB1C1EBA48001C3912 /* GetVerifyCodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D60BFA1C1EBA48001C3912 /* GetVerifyCodeModel.swift */; };
+		49D60BFD1C1EBD65001C3912 /* LoginProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D60BFC1C1EBD65001C3912 /* LoginProtocol.swift */; };
+		49D60BFF1C1EBE46001C3912 /* GetVerifyCodeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D60BFE1C1EBE46001C3912 /* GetVerifyCodeProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -229,6 +236,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4987BC0F1C1DAAE80065B67A /* Company.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
+		4987BC131C1DB4400065B67A /* CompanyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CompanyTableViewController.swift; path = ../CompanyTableViewController.swift; sourceTree = "<group>"; };
 		49A195BF1C1C7A20003B8DBD /* TaskMoment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskMoment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49A195C21C1C7A20003B8DBD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49A195C91C1C7A20003B8DBD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -250,6 +259,11 @@
 		49A196511C1C7B71003B8DBD /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		49A196541C1C7BC7003B8DBD /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		49A196561C1C7BCB003B8DBD /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		49D60BF51C1EB5E6001C3912 /* UtilBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilBox.swift; sourceTree = "<group>"; };
+		49D60BF81C1EBA2A001C3912 /* LoginModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		49D60BFA1C1EBA48001C3912 /* GetVerifyCodeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetVerifyCodeModel.swift; sourceTree = "<group>"; };
+		49D60BFC1C1EBD65001C3912 /* LoginProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginProtocol.swift; sourceTree = "<group>"; };
+		49D60BFE1C1EBE46001C3912 /* GetVerifyCodeProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetVerifyCodeProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -280,6 +294,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4987BC0E1C1DAAC30065B67A /* bean */ = {
+			isa = PBXGroup;
+			children = (
+				4987BC0F1C1DAAE80065B67A /* Company.swift */,
+			);
+			name = bean;
+			sourceTree = "<group>";
+		};
 		49A195B61C1C7A20003B8DBD = {
 			isa = PBXGroup;
 			children = (
@@ -306,10 +328,14 @@
 		49A195C11C1C7A20003B8DBD /* TaskMoment */ = {
 			isa = PBXGroup;
 			children = (
+				49D60BF71C1EBA19001C3912 /* model */,
+				49D60BE21C1EB5D1001C3912 /* common */,
+				4987BC0E1C1DAAC30065B67A /* bean */,
 				49A196531C1C7BB3003B8DBD /* Config */,
 				49A196461C1C7B01003B8DBD /* net */,
 				49A195C21C1C7A20003B8DBD /* AppDelegate.swift */,
 				49A1964B1C1C7B37003B8DBD /* LoginViewController.swift */,
+				4987BC131C1DB4400065B67A /* CompanyTableViewController.swift */,
 				49A1964F1C1C7B60003B8DBD /* Main.storyboard */,
 				49A196511C1C7B71003B8DBD /* LaunchScreen.storyboard */,
 				49A195C91C1C7A20003B8DBD /* Assets.xcassets */,
@@ -395,6 +421,25 @@
 				49A196541C1C7BC7003B8DBD /* Config.swift */,
 			);
 			name = Config;
+			sourceTree = "<group>";
+		};
+		49D60BE21C1EB5D1001C3912 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				49D60BF51C1EB5E6001C3912 /* UtilBox.swift */,
+			);
+			name = common;
+			sourceTree = "<group>";
+		};
+		49D60BF71C1EBA19001C3912 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				49D60BF81C1EBA2A001C3912 /* LoginModel.swift */,
+				49D60BFA1C1EBA48001C3912 /* GetVerifyCodeModel.swift */,
+				49D60BFC1C1EBD65001C3912 /* LoginProtocol.swift */,
+				49D60BFE1C1EBE46001C3912 /* GetVerifyCodeProtocol.swift */,
+			);
+			name = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -696,11 +741,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49D60BFB1C1EBA48001C3912 /* GetVerifyCodeModel.swift in Sources */,
 				49A1964A1C1C7B1F003B8DBD /* PrDelegate.swift in Sources */,
+				49D60BFD1C1EBD65001C3912 /* LoginProtocol.swift in Sources */,
 				49A195C31C1C7A20003B8DBD /* AppDelegate.swift in Sources */,
+				4987BC101C1DAAE80065B67A /* Company.swift in Sources */,
+				49D60BF61C1EB5E6001C3912 /* UtilBox.swift in Sources */,
 				49A1964C1C1C7B37003B8DBD /* LoginViewController.swift in Sources */,
 				49A1964E1C1C7B52003B8DBD /* PrSoapConnector.swift in Sources */,
+				4987BC141C1DB4400065B67A /* CompanyTableViewController.swift in Sources */,
 				49A196571C1C7BCB003B8DBD /* Constants.swift in Sources */,
+				49D60BFF1C1EBE46001C3912 /* GetVerifyCodeProtocol.swift in Sources */,
+				49D60BF91C1EBA2A001C3912 /* LoginModel.swift in Sources */,
 				49A196481C1C7B18003B8DBD /* AlamofireUtil.swift in Sources */,
 				49A196551C1C7BC7003B8DBD /* Config.swift in Sources */,
 			);
@@ -840,11 +892,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = TaskMoment/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jiubai.TaskMoment;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -852,11 +906,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = TaskMoment/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jiubai.TaskMoment;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -9,18 +9,19 @@
 import UIKit
 
 class PrSoapConnector: NSObject, NSURLConnectionDelegate, NSXMLParserDelegate {
-    var delegate : PrDelegate?
+    var callback : (response: String) -> Void
     
     var mutableData:NSMutableData = NSMutableData()
     var currentElementName:NSString = ""
     var returnWServiceDataString = ""
     
-    init(delegate: PrDelegate?){
-        self.delegate = delegate
+    init(callback : (response: String) -> Void){
+        //self.delegate = delegate
+        self.callback = callback
     }
     
     func process(functionName: String, getWServiceParamaters: Array<String>, getWServiceParamatersValues: Array<String>, getWServiceURL: String){
-        delegate?.onPreExecute()
+        //delegate?.onPreExecute()
         var soapMessage = "<?xml version='1.0' encoding='utf-8'?>"
         soapMessage += "<soap:Envelope xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' xmlns:soap='http://schemas.xmlsoap.org/soap/envelope/'>"
         soapMessage += "<soap:Body>"
@@ -48,12 +49,9 @@ class PrSoapConnector: NSObject, NSURLConnectionDelegate, NSXMLParserDelegate {
         
         connection!.start()
         connection?.start()
-        if let connection = connection
-        {
+        if let connection = connection{
             connection.start()
-        }
-        else
-        {
+        } else {
             
         }
     }
@@ -72,7 +70,9 @@ class PrSoapConnector: NSObject, NSURLConnectionDelegate, NSXMLParserDelegate {
         xmlParser.parse()
         xmlParser.shouldResolveExternalEntities = true
         returnWServiceDataString = NSString(data: mutableData, encoding: NSUTF8StringEncoding)! as String
-        delegate?.onPostExecute(returnWServiceDataString)
+        //delegate?.onPostExecute(returnWServiceDataString)
+        
+        callback(response: returnWServiceDataString)
     }
     
 //    func parser(parser: NSXMLParser!, didStartElement elementName: String!, namespaceURI: String!, qualifiedName qName: String!, attributes attributeDict: NSDictionary!){
