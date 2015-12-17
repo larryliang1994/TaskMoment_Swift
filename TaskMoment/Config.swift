@@ -9,4 +9,8 @@
 class Config {
     static var Random: String?
     static var Cookie: String?
+    static var Mid: String?
+    static var Nickname: String?
+    static var CID: String?
+    static var IsReachable: Bool?
 }

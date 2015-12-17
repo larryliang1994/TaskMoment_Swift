@@ -22,8 +22,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate, GetVerifyCodeD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        Config.Random = String(arc4random_uniform(100000))
-        
         loginButton.backgroundColor = UIColor.lightGrayColor()
         loginButton.layer.cornerRadius = 4
         loginButton.enabled = false
@@ -32,16 +30,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate, GetVerifyCodeD
         getVerifyCodeButton.layer.cornerRadius = 4
         getVerifyCodeButton.enabled = false
         
-        //porpraitImageView.center = backgroundImageView.center
-        
         telephoneNumTextField.delegate = self
         verifyCodeTextField.delegate = self
     }
     
-    override func viewDidAppear(animated: Bool) {
-        
-    }
-
     // 获取验证码
     @IBAction func getVerifyCode(sender: UIButton) {
         
@@ -90,6 +82,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate, GetVerifyCodeD
                 
         // 关闭键盘
         verifyCodeTextField.resignFirstResponder()
+        
+        loginButton.enabled = false
                 
         LoginModel(loginDelegate: self).doLogin(telephoneNumTextField.text!, verifyCode: verifyCodeTextField.text!)
     }
@@ -107,9 +101,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate, GetVerifyCodeD
     
     // 登录回调
     func onLoginResult(result: Bool, info: String) {
+        activityIndicator.stopAnimating()
         if result {
             let myStoryBoard = self.storyboard
-            let cvc = myStoryBoard?.instantiateViewControllerWithIdentifier("companyViewController")
+            let cvc = myStoryBoard?.instantiateViewControllerWithIdentifier(Constants.ID_Company)
             self.presentViewController(cvc!, animated: true, completion: nil)
         } else {
             let alertController = UIAlertController(title: "提示", message: info, preferredStyle: .Alert)
