@@ -46,7 +46,7 @@ class LoginModel : LoginProtocol{
         AlamofireUtil.getUrlBySoap(decodeKey, soapValue: decodeValue) { (response) -> Void in
             Config.Cookie = cookie
             
-            let json = JSON(response)
+            let json = JSON(UtilBox.convertStringToDictionary(response)!)
             
             Config.Mid = json["id"].stringValue
             Config.Nickname = json["real_name"].stringValue

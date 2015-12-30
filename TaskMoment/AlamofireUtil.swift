@@ -15,7 +15,7 @@ class AlamofireUtil {
         callback : (result: Bool, response: String?) -> Void) {
             
             getUrlBySoap(soapKey, soapValue: soapValue) { (response) -> Void in
-                Alamofire.request(.POST, Constants.ServerUrl + "/act/ajax.php?a=" + response + "&is_app=1", parameters: params)
+                Alamofire.request(.POST, Urls.ServerUrl + "/act/ajax.php?a=" + response + "&is_app=1", parameters: params)
                     .responseString{ response in
                         if response.result.isSuccess {
                             callback(result: true, response: response.result.value)
@@ -29,7 +29,7 @@ class AlamofireUtil {
     static func requestWithCookie(url: String, parameters: [String: String]?,
         callback : (result: Bool, response: String) -> Void) {
 
-            Alamofire.request(.POST, Constants.ServerUrl + "/ajax.php?a=" + url,
+            Alamofire.request(.POST, Urls.ServerUrl + "/ajax.php?a=" + url,
                 headers: ["Cookie": "memberCookie=\(Config.Cookie!)"], parameters: parameters)
                 .responseString{ response in
                     if response.result.isSuccess {
@@ -50,6 +50,6 @@ class AlamofireUtil {
             callback(response: soapUrl!)
         }
         
-        connect.process("soap_server", getWServiceParamaters: soapKey, getWServiceParamatersValues: soapValue, getWServiceURL: Constants.SoapTarget)
+        connect.process("soap_server", getWServiceParamaters: soapKey, getWServiceParamatersValues: soapValue, getWServiceURL: Urls.SoapTarget)
     }
 }

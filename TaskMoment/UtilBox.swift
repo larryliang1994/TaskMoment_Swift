@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class UtilBox {
     // 验证是否为手机号
@@ -38,5 +39,11 @@ class UtilBox {
             }
         }
         return nil
+    }
+    
+    static func setShadow(imageView: UIImageView, opacity: Float) {
+        imageView.layer.shadowOpacity = opacity
+        imageView.layer.shadowColor = UIColor.blackColor().CGColor
+        imageView.layer.shadowOffset = CGSize(width: 1, height: 1)
     }
 }

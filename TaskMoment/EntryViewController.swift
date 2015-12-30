@@ -20,16 +20,11 @@ class EntryViewController: UIViewController {
         
         Config.Random = String(arc4random_uniform(100000))
 
-        // Setting a remote image
-        // imageView.hnk_setImageFromURL(url)
-        
-        // Setting an image manually. Requires you to provide a key.
-        // imageView.hnk_setImage(image, key: key)
-        
         let userDefaults = NSUserDefaults.standardUserDefaults()
         
         Config.Cookie = userDefaults.stringForKey(Constants.Key_Cookie)
         Config.Nickname = userDefaults.stringForKey(Constants.Key_Nickname)
+        Config.Mid = userDefaults.stringForKey(Constants.Key_Mid)
         
         let qos = Int(QOS_CLASS_USER_INITIATED.rawValue)
         dispatch_async(dispatch_get_global_queue(qos, 0)) { () -> Void in

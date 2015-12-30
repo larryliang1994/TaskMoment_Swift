@@ -11,6 +11,9 @@ class Config {
     static var Cookie: String?
     static var Mid: String?
     static var Nickname: String?
-    static var CID: String?
+    static var CID: Int?
+    static var CompanyName: String?
+    static var CompanyCreator: Int?
+    static var CompanyBackground: String?
     static var IsReachable: Bool?
 }

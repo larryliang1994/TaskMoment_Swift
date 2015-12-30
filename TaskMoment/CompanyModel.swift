@@ -57,8 +57,8 @@ class CompanyModel: CompanyProtocol {
                 companyArray.insert(
                     Company(
                         name: subJson["name"].stringValue,
-                        cid: subJson["cid"].stringValue,
-                        creator: subJson["mid"].stringValue), atIndex: Int(index)!)
+                        cid: subJson["cid"].intValue,
+                        creator: subJson["mid"].intValue), atIndex: Int(index)!)
             }
             
             companyList.insert(companyArray, atIndex: 0)
@@ -79,8 +79,8 @@ class CompanyModel: CompanyProtocol {
                 companyArray.insert(
                     Company(
                         name: subJson["name"].stringValue,
-                        cid: subJson["cid"].stringValue,
-                        creator: subJson["mid"].stringValue), atIndex: Int(index)!)
+                        cid: subJson["cid"].intValue,
+                        creator: subJson["mid"].intValue), atIndex: Int(index)!)
             }
             
             companyList.insert(companyArray, atIndex: 1)

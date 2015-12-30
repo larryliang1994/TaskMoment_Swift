@@ -7,11 +7,9 @@
 //
 
 class Constants {
-    static let SoapTarget = "http://soap.adm.jiubaiwang.cn" + "/index.php?jbbh=20043&soap_server=1"
-    static let ServerUrl = "http://20045.jiubai.cc"
-    
     static let ID_Login = "loginViewController"
     static let ID_Company = "companyViewController"
+    static let ID_Main = "mainViewController"
     
     static let Key_Cookie = "cookie"
     static let Key_Nickname = "nickname"
@@ -19,4 +17,7 @@ class Constants {
     
     static let Success = 900001
     static let Failed = 0
+    static let NoMore = 900900
+    
+    static let LoadNum = 8
 }
