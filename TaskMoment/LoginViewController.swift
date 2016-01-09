@@ -12,10 +12,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, GetVerifyCodeD
     @IBOutlet weak var telephoneNumTextField: UITextField!
     @IBOutlet weak var verifyCodeTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
-    @IBOutlet weak var getVerifyCodeButton: UIButton!
-    
-    @IBOutlet weak var porpraitImageView: UIImageView!
-    @IBOutlet weak var backgroundImageView: UIImageView!
+    @IBOutlet var getVerifyCodeButton: UIButton!
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
@@ -32,6 +29,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate, GetVerifyCodeD
         
         telephoneNumTextField.delegate = self
         verifyCodeTextField.delegate = self
+        
+        let navBar = self.navigationController!.navigationBar
+        
+        navBar.barTintColor = UIColor.redColor()
+        self.navigationItem.title = "任务圈"
+        
+        // 设置字体属性
+        let navigationTitleAttribute : NSDictionary = NSDictionary(object: UIColor.whiteColor(),forKey: NSForegroundColorAttributeName)
+        navBar.titleTextAttributes = navigationTitleAttribute as? [String : AnyObject]
     }
     
     // 获取验证码
@@ -102,10 +108,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate, GetVerifyCodeD
     // 登录回调
     func onLoginResult(result: Bool, info: String) {
         activityIndicator.stopAnimating()
-        if result {
-            let myStoryBoard = self.storyboard
-            let cvc = myStoryBoard?.instantiateViewControllerWithIdentifier(Constants.ID_Company)
-            self.presentViewController(cvc!, animated: true, completion: nil)
+        if result {     
+            self.performSegueWithIdentifier(Constants.SegueID.Login, sender: self)
         } else {
             let alertController = UIAlertController(title: "提示", message: info, preferredStyle: .Alert)
             let okAction = UIAlertAction(title: "好的", style: UIAlertActionStyle.Default, handler: nil)

@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import Haneke
 
 class UserInfoViewController: UITableViewController {
 
+    @IBOutlet weak var portraitImageView: UIImageView!
+    @IBOutlet weak var nicknameLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,15 +29,21 @@ class UserInfoViewController: UITableViewController {
         // 设置字体属性
         let navigationTitleAttribute : NSDictionary = NSDictionary(object: UIColor.whiteColor(),forKey: NSForegroundColorAttributeName)
         navBar.titleTextAttributes = navigationTitleAttribute as? [String : AnyObject]
+        
+        portraitImageView.hnk_setImageFromURL(NSURL(
+            string: Urls.ProtraitMediaCenter + Config.Mid! + ".jpg")!)
+        //UtilBox.setShadow(portraitImageView, opacity: 0.2)
+        
+        nicknameLabel.text = Config.Nickname!
     }
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 0
-    }
-
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
-    }
+//    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+//        return 0
+//    }
+//
+//    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return 0
+//    }
 
     /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

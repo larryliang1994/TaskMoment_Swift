@@ -41,9 +41,47 @@ class UtilBox {
         return nil
     }
     
+    // 设置图片阴影
     static func setShadow(imageView: UIImageView, opacity: Float) {
         imageView.layer.shadowOpacity = opacity
         imageView.layer.shadowColor = UIColor.blackColor().CGColor
         imageView.layer.shadowOffset = CGSize(width: 1, height: 1)
+    }
+    
+    // 清除用户数据
+    static func clearUserDefaults() {
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        
+        userDefaults.removeObjectForKey(Constants.UserDefaultKey.Cookie)
+        userDefaults.removeObjectForKey(Constants.UserDefaultKey.Nickname)
+        userDefaults.removeObjectForKey(Constants.UserDefaultKey.Portrait)
+        userDefaults.removeObjectForKey(Constants.UserDefaultKey.Mid)
+        userDefaults.removeObjectForKey(Constants.UserDefaultKey.Cid)
+        userDefaults.removeObjectForKey(Constants.UserDefaultKey.CompanyName)
+        userDefaults.removeObjectForKey(Constants.UserDefaultKey.CompanyCreator)
+        userDefaults.removeObjectForKey(Constants.UserDefaultKey.CompanyBackground)
+        userDefaults.removeObjectForKey(Constants.UserDefaultKey.Time)
+    }
+    
+    // 时间戳转字符串
+    static func getDateFromString(date: String, format: String) -> String {
+        let outputFormat = NSDateFormatter()
+        // 格式化规则
+        outputFormat.dateFormat = format
+        // 定义时区
+        outputFormat.locale = NSLocale(localeIdentifier: "shanghai")
+        // 发布时间
+        let pubTime = NSDate(timeIntervalSince1970: Double(date)!)
+        return outputFormat.stringFromDate(pubTime)
+    }
+    
+    // 字符串转时间戳
+    static func stringToDate(date: String, format: String) -> NSTimeInterval {
+        
+        let outputFormatter = NSDateFormatter()
+        
+        outputFormatter.dateFormat = format
+        
+        return outputFormatter.dateFromString(date)!.timeIntervalSince1970
     }
 }

@@ -8,13 +8,13 @@
 
 class Member {
     var name: String?
-    var mobile: Int?
-    var id: Int?
-    var mid: Int?
+    var mobile: String?
+    var id: String?
+    var mid: String?
     
     init(){}
     
-    init(name: String, mobile: Int, id: Int, mid: Int) {
+    init(name: String, mobile: String, id: String, mid: String) {
         self.name = name
         self.mobile = mobile
         self.id = id

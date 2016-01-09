@@ -46,7 +46,6 @@ class MemberViewController: UITableViewController, MemberDelegate {
         navBar.titleTextAttributes = navigationTitleAttribute as? [String : AnyObject]
         
         refresh()
-        
     }
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -103,6 +102,10 @@ class MemberViewController: UITableViewController, MemberDelegate {
     
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         return true
+    }
+    
+    override func tableView(tableView: UITableView, titleForDeleteConfirmationButtonForRowAtIndexPath indexPath: NSIndexPath) -> String? {
+        return "删除"
     }
     
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {

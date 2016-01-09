@@ -1,0 +1,40 @@
+PODS:
+  - Alamofire (3.1.4)
+  - Bugly (1.4.5)
+  - CheckMarkView (0.2.3)
+  - HanekeSwift (0.10.1)
+  - SwiftAssetsPickerController (0.1.1):
+    - CheckMarkView
+  - SwiftyJSON (2.3.2)
+  - SWXMLHash (2.0.2)
+  - UMengAnalytics (3.6.6)
+
+DEPENDENCIES:
+  - Alamofire (~> 3.0)
+  - Bugly
+  - HanekeSwift
+  - SwiftAssetsPickerController
+  - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`)
+  - SWXMLHash (~> 2.0.0)
+  - UMengAnalytics
+
+EXTERNAL SOURCES:
+  SwiftyJSON:
+    :git: https://github.com/SwiftyJSON/SwiftyJSON.git
+
+CHECKOUT OPTIONS:
+  SwiftyJSON:
+    :commit: 5f59648a6e9356b26c5cb698ab924fa7d750b6c9
+    :git: https://github.com/SwiftyJSON/SwiftyJSON.git
+
+SPEC CHECKSUMS:
+  Alamofire: fbc829692f351fa1d8a31dd75fd7f7f56fea31fb
+  Bugly: a7ae7de78e40586db28252e8c9d8addb3f6489ed
+  CheckMarkView: 65180ff3745830b86d5e99940172f24c360d6d3b
+  HanekeSwift: 08e47d3d0f2899ec58e5d257beba0de619aca9e8
+  SwiftAssetsPickerController: 65fd40487ecc9b6d56a330b06c44c123d2e74112
+  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
+  SWXMLHash: 9e6bd7db2e8275eaf3d2082265623d6e749e169d
+  UMengAnalytics: 4bf831415146b9c57cb10be65fbd43462ef8cf65
+
+COCOAPODS: 0.39.0

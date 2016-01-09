@@ -10,6 +10,10 @@ import UIKit
 
 class TimelineViewController: UITableViewController, TimelineDelegate {
 
+    @IBOutlet var pictureCollectionView: UICollectionView!
+    
+    var rowHeight: CGFloat = 700
+    
     private var taskList = [Task]() {
         didSet {
             tableView.reloadData()
@@ -26,16 +30,16 @@ class TimelineViewController: UITableViewController, TimelineDelegate {
         navBar.barTintColor = UIColor(red: 0x26/255, green: 0x32/255, blue: 0x38/255, alpha: 0.5)
         navBar.translucent = true;
         
-        tableView.estimatedRowHeight = tableView.rowHeight
-        tableView.rowHeight = UITableViewAutomaticDimension
-        
         self.navigationItem.title = Config.CompanyName! + "的任务圈"
         
         // 设置字体属性
         let navigationTitleAttribute : NSDictionary = NSDictionary(object: UIColor.whiteColor(),forKey: NSForegroundColorAttributeName)
         navBar.titleTextAttributes = navigationTitleAttribute as? [String : AnyObject]
-
+        
         refresh()
+        
+        tableView.estimatedRowHeight = tableView.rowHeight
+        tableView.rowHeight = UITableViewAutomaticDimension
     }
     
     func refresh() {
@@ -46,6 +50,10 @@ class TimelineViewController: UITableViewController, TimelineDelegate {
     
     @IBAction func refresh(sender: UIRefreshControl) {
         refresh()
+    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return rowHeight
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -61,14 +69,25 @@ class TimelineViewController: UITableViewController, TimelineDelegate {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCellWithIdentifier("timelineHeaderCell", forIndexPath: indexPath) as! TimelineHeaderTableViewCell
             cell.initHeader()
+        
             return cell
         } else {
             let cell = tableView.dequeueReusableCellWithIdentifier("timelineBodyCell", forIndexPath: indexPath) as! TimelineTableViewCell
             
             cell.task = taskList[indexPath.row]
             
+//            rowHeight = tableView.estimatedRowHeight + CGFloat((cell.task?.pictures?.count)! / 8 * 99)
+//            self.tableView(tableView, heightForRowAtIndexPath: indexPath)
+//            
+//            print(tableView.rowHeight)
+//            print(tableView.estimatedRowHeight)
+            
             return cell
         }
+    }
+    
+    @IBAction func publishTask(sender: UIBarButtonItem) {
+        //performSegueWithIdentifier(Constants.SegueID.PublishTask, sender: self)
     }
     
     func onPullTimelineResult(result: Int, info: String) {
@@ -76,7 +95,10 @@ class TimelineViewController: UITableViewController, TimelineDelegate {
             let qos = Int(QOS_CLASS_USER_INITIATED.rawValue)
             dispatch_async(dispatch_get_global_queue(qos, 0)) { () -> Void in
                 sleep(1)
-                self.taskList = TimelineModel.taskList
+                
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    self.taskList = TimelineModel.taskList
+                })
             }
         } else {
             let alert = UIAlertController(
@@ -98,50 +120,4 @@ class TimelineViewController: UITableViewController, TimelineDelegate {
             refreshControl?.endRefreshing()
         }
     }
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

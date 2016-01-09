@@ -22,8 +22,8 @@ class GetVerifyCodeModel : GetVerifyCodeProtocol{
         
         AlamofireUtil.requestWithSoap(soapKey, soapValue: soapValue, params: ["mobile": telephoneNum],
             callback: { (result, response) -> Void in
-                if let responseString = response {
-                    let json = JSON(UtilBox.convertStringToDictionary(responseString)!)
+                if result {
+                    let json = JSON(UtilBox.convertStringToDictionary(response!)!)
                     
                     if result {
                         let status = json["status"].intValue

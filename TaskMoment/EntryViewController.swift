@@ -22,26 +22,38 @@ class EntryViewController: UIViewController {
 
         let userDefaults = NSUserDefaults.standardUserDefaults()
         
-        Config.Cookie = userDefaults.stringForKey(Constants.Key_Cookie)
-        Config.Nickname = userDefaults.stringForKey(Constants.Key_Nickname)
-        Config.Mid = userDefaults.stringForKey(Constants.Key_Mid)
+        Config.Cookie = userDefaults.stringForKey(Constants.UserDefaultKey.Cookie)
+        Config.Nickname = userDefaults.stringForKey(Constants.UserDefaultKey.Nickname)
+        Config.Mid = userDefaults.stringForKey(Constants.UserDefaultKey.Mid)
+        Config.CID = userDefaults.stringForKey(Constants.UserDefaultKey.Cid)
+        Config.CompanyName = userDefaults.stringForKey(Constants.UserDefaultKey.CompanyName)
+        Config.CompanyBackground = userDefaults.stringForKey(Constants.UserDefaultKey.CompanyBackground)
+        Config.CompanyCreator = userDefaults.stringForKey(Constants.UserDefaultKey.CompanyCreator)
         
         let qos = Int(QOS_CLASS_USER_INITIATED.rawValue)
         dispatch_async(dispatch_get_global_queue(qos, 0)) { () -> Void in
             sleep(1)
-            self.getStarted()
+            dispatch_async(dispatch_get_main_queue(), { self.getStarted() })
         }
     }
     
     func getStarted() {
-        let myStoryBoard = self.storyboard
+        self.dismissViewControllerAnimated(true, completion:nil)
         
-        if Config.Cookie == nil {
-            let vc = myStoryBoard?.instantiateViewControllerWithIdentifier(Constants.ID_Login)
-            self.presentViewController(vc!, animated: true, completion: nil)
+        if Config.Cookie == nil || Config.CID == nil {
+            self.performSegueWithIdentifier(Constants.SegueID.GoToLogin, sender: self)
         } else {
-            let vc = myStoryBoard?.instantiateViewControllerWithIdentifier(Constants.ID_Company)
-            self.presentViewController(vc!, animated: true, completion: nil)
+            self.performSegueWithIdentifier(Constants.SegueID.GoToMain, sender: self)
         }
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        MobClick.beginLogPageView("HomePage")
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        MobClick.endLogPageView("HomePage")
     }
 }

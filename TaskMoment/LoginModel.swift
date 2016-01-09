@@ -22,17 +22,16 @@ class LoginModel : LoginProtocol{
         
         AlamofireUtil.requestWithSoap(soapKey, soapValue: soapValue,
             params: ["mobile": telephoneNum, "check_code": verifyCode]) { (result, response) -> Void in
-                if let responseString = response {
-                    let json = JSON(UtilBox.convertStringToDictionary(responseString)!)
+                if result {
+                    let json = JSON(UtilBox.convertStringToDictionary(response!)!)
                     
-                    if result {
-                        let status = json["status"].intValue
-                        if status == Constants.Success {
-                            self.handleCookie(json["memberCookie"].stringValue)
-                        } else {
-                            self.loginDelegate.onLoginResult(false, info: json["info"].stringValue)
-                        }
+                    let status = json["status"].intValue
+                    if status == Constants.Success {
+                        self.handleCookie(json["memberCookie"].stringValue)
+                    } else {
+                        self.loginDelegate.onLoginResult(false, info: json["info"].stringValue)
                     }
+                    
                 } else {
                     self.loginDelegate.onLoginResult(false, info: "登录失败")
                 }
@@ -53,9 +52,9 @@ class LoginModel : LoginProtocol{
             
             let userDefault = NSUserDefaults.standardUserDefaults()
             
-            userDefault.setValue(Config.Cookie!, forKey: Constants.Key_Cookie)
-            userDefault.setValue(Config.Mid!, forKey: Constants.Key_Mid)
-            userDefault.setValue(Config.Nickname!, forKey: Constants.Key_Nickname)
+            userDefault.setValue(Config.Cookie!, forKey: Constants.UserDefaultKey.Cookie)
+            userDefault.setValue(Config.Mid!, forKey: Constants.UserDefaultKey.Mid)
+            userDefault.setValue(Config.Nickname!, forKey: Constants.UserDefaultKey.Nickname)
             
             self.loginDelegate.onLoginResult(true, info: "登录成功")
         }

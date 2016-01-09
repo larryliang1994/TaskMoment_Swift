@@ -55,7 +55,7 @@ class TimelineModel: TimelineProtocol {
         }
         
         let infoJson = json["info"]
-
+        
         if infoJson != nil && infoJson.stringValue != "null" {
             
             for index in 0 ... infoJson.count-1 {
@@ -67,10 +67,11 @@ class TimelineModel: TimelineProtocol {
                     mid: taskJson["mid"].intValue,
                     grade: taskJson["p1"].stringValue,
                     desc: taskJson["comments"].stringValue,
-                    executor: taskJson["executor"].intValue,
-                    supervisor: taskJson["supervisor"].intValue,
-                    auditor: taskJson["auditor"].intValue,
-                    pictures: nil, comments: nil,
+                    executor: taskJson["ext1"].intValue,
+                    supervisor: taskJson["ext2"].intValue,
+                    auditor: taskJson["ext3"].intValue,
+                    pictures: decodePictures(taskJson["works"]),
+                    comments: docodeComment(taskJson["id"].intValue, commentsJson: taskJson["member_comment"]),
                     deadline: taskJson["time1"].stringValue,
                     startTime: taskJson["time2"].stringValue,
                     createTime: taskJson["create_time"].stringValue,
@@ -83,6 +84,51 @@ class TimelineModel: TimelineProtocol {
         } else {
             timelineDelegate?.onPullTimelineResult(Constants.Failed, info: "请求失败")
         }
+    }
+    
+    func decodePictures(pictures: JSON) -> [String] {
+        let pictureString = pictures.rawString()!
+            .stringByReplacingOccurrencesOfString("\\", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
+            .stringByReplacingOccurrencesOfString("[", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
+            .stringByReplacingOccurrencesOfString("]", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
+            .stringByReplacingOccurrencesOfString("\"", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
+        let picturesJson = JSON(pictureString.componentsSeparatedByString(","))
+        
+        var pictureList = [String]()
+        if picturesJson != nil && picturesJson.stringValue != "null" && picturesJson.count != 0 {
+            for index in 0 ... picturesJson.count - 1 {
+                pictureList.append(picturesJson[index].stringValue)
+            }
+        }
+        
+        return pictureList
+    }
+    
+    func docodeComment(taskID: Int, commentsJson: JSON) -> [Comment] {
+        var commentList = [Comment]()
+        
+        if commentsJson != nil && commentsJson != "null" && commentsJson.count != 0 {
+            for index in 0 ... commentsJson.count - 1 {
+                
+                let commentJson = commentsJson[index]
+                
+                var sender = commentJson["send_real_name"].stringValue
+                sender = sender != "" ? sender : commentJson["send_mobile"].stringValue
+                
+                var receiver = commentJson["receiver_real_name"].stringValue
+                receiver = receiver != "" ? receiver : commentJson["receiver_mobile"].stringValue
+                
+                if receiver == "" {
+                    commentList.append(
+                        Comment(taskID: taskID, sender: sender, senderID: commentJson["send_id"].intValue, content: commentJson["content"].stringValue, time: commentJson["create_time"].stringValue))
+                } else {
+                    commentList.append(
+                        Comment(taskID: taskID, sender: sender, senderID: commentJson["send_id"].intValue, receiver: receiver, receiverID: commentJson["receiver_id"].intValue, content: commentJson["content"].stringValue, time: commentJson["create_time"].stringValue))
+                }
+            }
+        }
+        
+        return commentList
     }
 }
 

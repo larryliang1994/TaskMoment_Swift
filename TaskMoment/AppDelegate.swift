@@ -13,10 +13,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        MobClick.startWithAppkey(Constants.Key.UMAppKey, reportPolicy: BATCH,
+            channelId: "developer")
+        
+        initBugly()
+        
         return true
+    }
+    
+    func initBugly() {
+        CrashReporter.sharedInstance().enableLog(true)
+        CrashReporter.sharedInstance().installWithAppId(Constants.Key.BuglyAppID)
+        //NSObject.performSelector("crash", withObject: nil, afterDelay: 3.0)
     }
 
     func applicationWillResignActive(application: UIApplication) {

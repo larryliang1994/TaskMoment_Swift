@@ -48,9 +48,9 @@ class MemberModel: MemberProtocol {
                 
                 let member = Member(
                     name: memberJson["real_name"].stringValue,
-                    mobile: Int(memberJson["mobile"].stringValue)!,
-                    id: Int(memberJson["id"].stringValue)!,
-                    mid: Int(memberJson["mid"].stringValue)!)
+                    mobile: memberJson["mobile"].stringValue,
+                    id: memberJson["id"].stringValue,
+                    mid: memberJson["mid"].stringValue)
                 
                 if member.name == "" {
                     member.name = String(member.mobile!)
@@ -61,6 +61,20 @@ class MemberModel: MemberProtocol {
         }
         
         self.memberDelegate?.onGetMemberResult(Constants.Success, info: "")
+    }
+    
+    static func getMemberWithID(mid: Int) -> Member? {
+        if memberList.count == 0 {
+            return nil
+        }
+        
+        for index in 0 ... memberList.count - 1 {
+            if Int(memberList[index].mid!) == mid {
+                return memberList[index]
+            }
+        }
+        
+        return nil
     }
 }
 

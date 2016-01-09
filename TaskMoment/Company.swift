@@ -10,14 +10,14 @@ import Foundation
 
 class Company {
     var name: String?
-    var cid: Int?
-    var creator: Int?
+    var cid: String?
+    var creator: String?
     
     init(name: String?){
         self.name = name
     }
     
-    init(name: String, cid: Int?, creator: Int?) {
+    init(name: String, cid: String, creator: String) {
         self.name = name
         self.cid = cid
         self.creator = creator

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "static AlamofireUtil.requestWithCookie(String, parameters : [String : String]?, callback : (result : Bool, response : String) -&gt; ()) -&gt; ():AlamofireUtil.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Config.Cookie">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

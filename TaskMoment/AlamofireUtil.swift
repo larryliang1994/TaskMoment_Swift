@@ -29,6 +29,11 @@ class AlamofireUtil {
     static func requestWithCookie(url: String, parameters: [String: String]?,
         callback : (result: Bool, response: String) -> Void) {
 
+            if Config.Cookie == nil {
+                callback(result: false, response: "")
+                return
+            }
+            
             Alamofire.request(.POST, Urls.ServerUrl + "/ajax.php?a=" + url,
                 headers: ["Cookie": "memberCookie=\(Config.Cookie!)"], parameters: parameters)
                 .responseString{ response in
