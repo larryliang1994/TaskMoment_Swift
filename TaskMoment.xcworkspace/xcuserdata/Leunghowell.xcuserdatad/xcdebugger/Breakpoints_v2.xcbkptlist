@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TaskMoment/PreferenceViewController.swift"
-            timestampString = "473658950.246012"
+            timestampString = "474608476.861796"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
             landmarkName = "tableView(_:didSelectRowAtIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -154,11 +154,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TaskMoment/LoginViewController.swift"
-            timestampString = "473437700.06161"
+            timestampString = "474517951.697263"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
             landmarkName = "onLoginResult(_:info:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -202,11 +202,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TaskMoment/TimelineViewController.swift"
-            timestampString = "473594419.253335"
+            timestampString = "474521278.304855"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
             landmarkName = "TimelineViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -250,23 +250,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TaskMoment/TimelineModel.swift"
-            timestampString = "473653100.3093"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128"
-            landmarkName = "docodeComment(_:commentsJson:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TaskMoment/TimelineModel.swift"
-            timestampString = "473653100.3093"
+            timestampString = "474521908.79462"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "130"
@@ -282,11 +266,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TaskMoment/TimelineModel.swift"
-            timestampString = "473653100.3093"
+            timestampString = "474521908.79462"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "131"
-            endingLineNumber = "131"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
             landmarkName = "docodeComment(_:commentsJson:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -297,12 +281,28 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TaskMoment/TaskPublishViewController.swift"
-            timestampString = "473908780.225189"
+            filePath = "TaskMoment/TimelineModel.swift"
+            timestampString = "474521908.79462"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "161"
-            endingLineNumber = "161"
+            startingLineNumber = "133"
+            endingLineNumber = "133"
+            landmarkName = "TimelineModel"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TaskMoment/TaskPublishViewController.swift"
+            timestampString = "474603716.443341"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "257"
+            endingLineNumber = "257"
             landmarkName = "showMemberPicker(_:)"
             landmarkType = "5">
             <Locations>
@@ -345,20 +345,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TaskMoment/TaskPublishViewController.swift"
-            timestampString = "473908780.225189"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "10"
-            endingLineNumber = "10">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "TaskMoment/MediaServiceUtil.swift"
             timestampString = "473917695.055015"
             startingColumnNumber = "9223372036854775807"
@@ -376,13 +362,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TaskMoment/MediaServiceUtil.swift"
-            timestampString = "473917695.055015"
+            timestampString = "474348662.855663"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "MediaServiceUtil"
-            landmarkType = "3">
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "uploadImage(_:fileName:dir:notification:)"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -391,13 +377,93 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TaskMoment/MediaServiceUtil.swift"
-            timestampString = "473917377.716547"
+            filePath = "TaskMoment/TaskPublishViewController.swift"
+            timestampString = "474603716.443341"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
-            landmarkName = "uploadImage(_:)"
+            startingLineNumber = "343"
+            endingLineNumber = "343"
+            landmarkName = "collectionView(_:didSelectItemAtIndexPath:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TaskMoment/TimelineViewController.swift"
+            timestampString = "474542982.101848"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "151"
+            endingLineNumber = "151"
+            landmarkName = "didPublishTask(_:photos:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TaskMoment.TimelineViewController.onPullTimelineResult (TaskMoment.TimelineViewController)(Swift.Int, info : Swift.String) -&gt; ()"
+                  moduleName = "TaskMoment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Leunghowell/Desktop/Swift_SelfLearning/TaskMoment_Swift/TaskMoment/TimelineViewController.swift"
+                  timestampString = "474517687.405694"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "134"
+                  endingLineNumber = "134"
+                  offsetFromSymbolStart = "856">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TaskMoment.TimelineViewController.(onPullTimelineResult (TaskMoment.TimelineViewController) -&gt; (Swift.Int, info : Swift.String) -&gt; ()).(closure #2)"
+                  moduleName = "TaskMoment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Leunghowell/Desktop/Swift_SelfLearning/TaskMoment_Swift/TaskMoment/TimelineViewController.swift"
+                  timestampString = "474517687.406208"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "134"
+                  endingLineNumber = "134"
+                  offsetFromSymbolStart = "12">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TaskMoment/UserInfoViewController.swift"
+            timestampString = "474608983.907736"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "imagePickerController(_:didFinishPickingImage:editingInfo:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TaskMoment/AboutViewController.swift"
+            timestampString = "474608237.696682"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "initView()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

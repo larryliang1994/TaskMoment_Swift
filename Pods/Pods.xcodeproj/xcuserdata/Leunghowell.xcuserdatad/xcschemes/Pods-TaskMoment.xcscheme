@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '015827E26E5F6082FC8BFDEF'
+               BlueprintIdentifier = 'BB4D1791BE57414340EB347B'
                BlueprintName = 'Pods-TaskMoment'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Pods_TaskMoment.framework'>

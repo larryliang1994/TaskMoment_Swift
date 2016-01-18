@@ -8,13 +8,10 @@
 
 import UIKit
 
-class MainViewController: RAMAnimatedTabBarController {
+class MainViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    override func viewDidAppear(animated: Bool) {
-    }
-
 }

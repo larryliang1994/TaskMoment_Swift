@@ -85,17 +85,17 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-TaskMoment/Alamofire.framework"
-  install_framework "Pods-TaskMoment/CheckMarkView.framework"
+  install_framework "Pods-TaskMoment/DKImagePickerController.framework"
   install_framework "Pods-TaskMoment/Haneke.framework"
+  install_framework "Pods-TaskMoment/ReachabilitySwift.framework"
   install_framework "Pods-TaskMoment/SWXMLHash.framework"
-  install_framework "Pods-TaskMoment/SwiftAssetsPickerController.framework"
   install_framework "Pods-TaskMoment/SwiftyJSON.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-TaskMoment/Alamofire.framework"
-  install_framework "Pods-TaskMoment/CheckMarkView.framework"
+  install_framework "Pods-TaskMoment/DKImagePickerController.framework"
   install_framework "Pods-TaskMoment/Haneke.framework"
+  install_framework "Pods-TaskMoment/ReachabilitySwift.framework"
   install_framework "Pods-TaskMoment/SWXMLHash.framework"
-  install_framework "Pods-TaskMoment/SwiftAssetsPickerController.framework"
   install_framework "Pods-TaskMoment/SwiftyJSON.framework"
 fi

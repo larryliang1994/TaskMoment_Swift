@@ -19,11 +19,13 @@ class MediaServiceUtil {
             }
     }
     
-    static func uploadImage(imageData: NSData) {
+    static func uploadImage(imageData: NSData, fileName: String, dir: String, notification: TFEUploadNotification) {
         
-        let progress = TFEUploadProgress(TFEUploadSession(), NSUInteger(1))
-        let notification = TFEUploadNotification(progress, success: )
-        ALBBMedia.sharedInstance().uploadByData(imageData, notification: TFEUploadNotification!)
+        ALBBMedia.sharedInstance().uploadByData(
+            imageData,
+            fileName:fileName,
+            dir: dir,
+            notification: notification)
     }
     
     

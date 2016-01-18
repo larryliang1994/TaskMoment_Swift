@@ -97,12 +97,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate, GetVerifyCodeD
     // 获取验证码回调
     func onGetVerifyCodeResult(result: Bool, info: String) {
         activityIndicator.stopAnimating()
-
-        let alertController = UIAlertController(title: "提示", message: info, preferredStyle: .Alert)
-        let okAction = UIAlertAction(title: "好的", style: UIAlertActionStyle.Default, handler: nil)
-        alertController.addAction(okAction)
         
-        self.presentViewController(alertController, animated: true, completion: nil)
+        UtilBox.alert(self, message: info)
     }
     
     // 登录回调
@@ -111,11 +107,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, GetVerifyCodeD
         if result {     
             self.performSegueWithIdentifier(Constants.SegueID.Login, sender: self)
         } else {
-            let alertController = UIAlertController(title: "提示", message: info, preferredStyle: .Alert)
-            let okAction = UIAlertAction(title: "好的", style: UIAlertActionStyle.Default, handler: nil)
-            alertController.addAction(okAction)
-            
-            self.presentViewController(alertController, animated: true, completion: nil)
+            UtilBox.alert(self, message: info)
         }
     }
     

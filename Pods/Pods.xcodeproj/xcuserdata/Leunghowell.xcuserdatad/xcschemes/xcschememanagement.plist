@@ -9,7 +9,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>CheckMarkView.xcscheme</key>
+		<key>DKImagePickerController.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -29,12 +29,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>SWXMLHash.xcscheme</key>
+		<key>ReachabilitySwift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>SwiftAssetsPickerController.xcscheme</key>
+		<key>SWXMLHash.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -47,7 +47,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>23A3B9B92048CFFC446A4C72E65201A5</key>
+		<key>0C4D73CAB97562ED6EBAC035B9E74E83</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>42A0974C3835C2C3BF0B427B87D4297B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -57,32 +62,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>493121BF7E0DA93CD285657AE1DD4076</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>58D2E10DEA4F5830A081E34422E6C057</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>75094C64A9CEE1DBB71FBDE428709B5D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>7DDF79495F24B309AF089ACC99FC1151</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8A0A95659702FF80BD575CA3BBB358B7</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B51B101139A3C69B0C126BC2EF710F4E</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C0247C0B035F09B5BD27332FA0C3E5EC</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C6FEC0237C844310C734F67DC539A74E</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>D2793A0F4FDB0F8DDE9A8B907655FF95</key>
+		<key>B0CB41D244A2924A7E95C2345847C0AB</key>
 		<dict>
 			<key>primary</key>
 			<true/>

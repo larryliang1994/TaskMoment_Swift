@@ -65,7 +65,7 @@ class MemberModel: MemberProtocol {
     
     static func getMemberWithID(mid: Int) -> Member? {
         if memberList.count == 0 {
-            return nil
+            return Member()
         }
         
         for index in 0 ... memberList.count - 1 {
@@ -74,7 +74,7 @@ class MemberModel: MemberProtocol {
             }
         }
         
-        return nil
+        return Member()
     }
 }
 

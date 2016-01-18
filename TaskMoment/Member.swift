@@ -12,7 +12,12 @@ class Member {
     var id: String?
     var mid: String?
     
-    init(){}
+    init(){
+        self.name = ""
+        self.mobile = ""
+        self.id = ""
+        self.mid = ""
+    }
     
     init(name: String, mobile: String, id: String, mid: String) {
         self.name = name

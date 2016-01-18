@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Photos
 
 class UtilBox {
     // 验证是否为手机号
@@ -83,5 +84,55 @@ class UtilBox {
         outputFormatter.dateFormat = format
         
         return outputFormatter.dateFromString(date)!.timeIntervalSince1970
+    }
+    
+    // 压缩图片
+    static func compressImage(image: UIImage!, maxSize: Int) -> NSData {
+        var compression: CGFloat = 1.0
+        let maxCompression: CGFloat = 0.1
+        
+        var imageData = UIImageJPEGRepresentation(image, compression)
+        
+        while (imageData?.length > maxSize && compression > maxCompression) {
+            compression -= 0.1
+            imageData = UIImageJPEGRepresentation(image, compression)
+        }
+        
+        return imageData!
+    }
+    
+    // MD5加密
+    static func MD5(string: String) -> String {
+        let data = string.dataUsingEncoding(NSUTF8StringEncoding)!
+        let c_data = data.bytes
+        var md: [UInt8] = [UInt8](count: Int(CC_MD5_DIGEST_LENGTH), repeatedValue: 0)
+        CC_MD5(c_data, CC_LONG(data.length), UnsafeMutablePointer<UInt8>(md))
+        
+        var ret: String = ""
+        for index in 0 ..< Int(CC_MD5_DIGEST_LENGTH) {
+            ret += String(format: "%.2X", md[index])
+        }
+        return ret
+    }
+    
+    // PHAsset转UIImage
+    static func getAssetThumbnail(asset: PHAsset) -> UIImage {
+        let manager = PHImageManager.defaultManager()
+        let option = PHImageRequestOptions()
+        var thumbnail = UIImage()
+        option.synchronous = true
+        manager.requestImageForAsset(asset, targetSize: CGSize(width: 100.0, height: 100.0), contentMode: .AspectFit, options: option, resultHandler: {(result, info)->Void in
+            thumbnail = result!
+        })
+        return thumbnail
+    }
+    
+    // 弹出提示对话框
+    static func alert(vc: UIViewController, message: String) {
+        let alertController = UIAlertController(title: "提示", message: message, preferredStyle: .Alert)
+        let okAction = UIAlertAction(title: "好的", style: UIAlertActionStyle.Default, handler: nil)
+        alertController.addAction(okAction)
+        
+        vc.presentViewController(alertController, animated: true, completion: nil)
     }
 }

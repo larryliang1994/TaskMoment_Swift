@@ -22,4 +22,10 @@ class Urls {
     static let CreateCompany = "create_company"
     static let GetTaskList = "get_renwulist"
     static let GetMember = "get_chengyuan&t_active_cid=";
+    static let PublishTask = "renwu_add"
+    static let UpdateTaskPicture = "renwu_update"
+    static let GetUserInfo = "get_user_info"
+    static let DeleteMember = "delChengyuan"
+    static let AddMember = "chengyuan_add"
+    static let UpdateUserInfo = "update_user_info"
 }

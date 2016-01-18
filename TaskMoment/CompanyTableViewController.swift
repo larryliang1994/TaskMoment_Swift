@@ -21,21 +21,37 @@ class CompanyTableViewController:UITableViewController, CompanyDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
      
+        initNavBar()
+        
+        initView()
+                
+        refresh()
+    }
+    
+    // 初始化其它view
+    func initView() {
+        tableView.estimatedRowHeight = tableView.rowHeight
+        tableView.rowHeight = UITableViewAutomaticDimension
+    }
+    
+    // 初始化NavigationBar
+    func initNavBar() {
         let navBar = self.navigationController!.navigationBar
         
         navBar.barTintColor = UIColor(red: 0x26/255, green: 0x32/255, blue: 0x38/255, alpha: 0.5)
-        navBar.translucent = true;
-        
-        tableView.estimatedRowHeight = tableView.rowHeight
-        tableView.rowHeight = UITableViewAutomaticDimension
+        navBar.translucent = true
         
         self.navigationItem.title = "公司列表"
         
         // 设置字体属性
         let navigationTitleAttribute : NSDictionary = NSDictionary(object: UIColor.whiteColor(),forKey: NSForegroundColorAttributeName)
         navBar.titleTextAttributes = navigationTitleAttribute as? [String : AnyObject]
-                
-        refresh()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
+        
+        tabBarController?.tabBar.hidden = true
     }
     
     @IBAction func refresh(sender: UIRefreshControl) {
@@ -95,6 +111,7 @@ class CompanyTableViewController:UITableViewController, CompanyDelegate {
         
         alert.addTextFieldWithConfigurationHandler { (textField) -> Void in
             textField.placeholder = "公司名称"
+            textField.font = UIFont(name: "Helvetica", size: 17.0)
         }
         
         presentViewController(alert, animated: true, completion: nil)
@@ -127,19 +144,7 @@ class CompanyTableViewController:UITableViewController, CompanyDelegate {
         if result == Constants.Success {
             refresh()
         } else {
-            let alert = UIAlertController(
-                title: nil,
-                message: info,
-                preferredStyle: UIAlertControllerStyle.Alert
-            )
-            
-            alert.addAction(UIAlertAction(
-                title: "好的",
-                style: .Cancel)
-                { (action: UIAlertAction) -> Void in }
-            )
-            
-            presentViewController(alert, animated: true, completion: nil)
+            UtilBox.alert(self, message: info)
         }
     }
     

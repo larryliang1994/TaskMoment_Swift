@@ -15,5 +15,7 @@
 #import <ALBBMediaService/ALBBMediaService.h>
 #import "ALBBMedia.h"
 #import <Foundation/Foundation.h>
+#import <CommonCrypto/CommonDigest.h>
+#import <math.h>
 
 #endif /* Bridge_h */

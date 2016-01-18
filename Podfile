@@ -12,8 +12,10 @@ pod 'SWXMLHash', '~> 2.0.0'
 
 pod 'HanekeSwift'
 
-pod 'SwiftAssetsPickerController'
-
 pod 'UMengAnalytics'
 
 pod 'Bugly'
+
+pod 'DKImagePickerController'
+
+pod 'ReachabilitySwift', git: 'https://github.com/ashleymills/Reachability.swift'
